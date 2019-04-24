@@ -1,0 +1,259 @@
+﻿@model aspIdentityLearn.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundels/vendor/modernizr")
+
+</head>
+<body class="darklayout">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <div class="content-inner-all">
+            <div class="login-form-area mg-t-30 mg-b-15">
+                <div class="container-fluid">
+
+                    <div class="raw">
+                        <div class="col-lg-2">
+                        </div>
+
+                            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "adminpro-form", id = "adminpro-register-form", role = "form" }))
+                            {
+                                <div class="col-lg-6">
+                                    <div class="login-bg">
+                                        <div class="row">
+
+                                            <div class="col-lg-12">
+                                                <div class="logo">
+                                                    <a href="#">
+                                                        <img src="~/img/logo/log.png" alt="" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="login-title">
+                                                    <h1>Registration Form</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="raw">
+                                            <div class="col-lg-12">
+                                                @Html.AntiForgeryToken()
+                                                @Html.ValidationSummary("", new { @class = "text-danger" })
+                                            </div>
+
+                                        </div>
+
+                                        <div class="raw">
+                                            <div class="col-lg-4">
+                                                <div class="login-input-head">
+                                                    @Html.LabelFor(m => m.UserName, new { @class = "" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="login-input-area">
+
+                                                        @Html.TextBoxFor(m => m.UserName, new { @class = "" })
+                                                        <i class="fa fa-user login-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="raw">
+                                            <div class="col-lg-4">
+                                                <div class="login-input-head">
+                                                    @Html.LabelFor(m => m.Email, new { @class = "" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="login-input-area">
+
+                                                        @Html.TextBoxFor(m => m.Email, new { @class = "" })
+                                                        <i class="fa fa-envelope login-user" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="raw">
+                                            <div class="col-lg-4">
+                                                <div class="login-input-head">
+                                                    @Html.LabelFor(m => m.Password, new { @class = "" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="login-input-area">
+
+                                                        @Html.PasswordFor(m => m.Password, new { @class = "" })
+                                                        <i class="fa fa-lock login-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="raw">
+                                            <div class="col-lg-4">
+                                                <div class="login-input-head">
+                                                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="login-input-area">
+
+                                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "" })
+                                                        <i class="fa fa-lock login-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="raw">
+                                            <div class="col-lg-4">
+                                                <div class="login-input-head">
+                                                    @Html.LabelFor(m => m.FirstName, new { @class = "" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="login-input-area">
+
+                                                        @Html.TextBoxFor(m => m.FirstName, new { @class = "" })
+                                                        <i class="fa fa-lock login-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="raw">
+                                            <div class="col-lg-4">
+                                                <div class="login-input-head">
+                                                    @Html.LabelFor(m => m.LastName, new { @class = "" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="login-input-area">
+
+                                                        @Html.TextBoxFor(m => m.LastName, new { @class = "" })
+                                                        <i class="fa fa-lock login-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="raw">
+                                            <div class="col-lg-4">
+                                                <div class="login-input-head">
+                                                    @Html.LabelFor(m => m.JobDescription, new { @class = "" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="login-input-area">
+
+                                                        @Html.TextBoxFor(m => m.JobDescription, new { @class = "" })
+                                                        <i class="fa fa-lock login-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="raw">
+                                            <div class="col-lg-4">
+                                                <div class="login-input-head">
+                                                    @Html.LabelFor(m => m.PhoneNumber, new { @class = "" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="login-input-area">
+
+                                                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "" })
+                                                        <i class="fa fa-lock login-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="raw">
+                                            <div class="col-lg-4">
+                                                <div class="login-input-head">
+                                                    @Html.LabelFor(m => m.Roles, new { @class = "" })
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="login-input-area">
+
+                                                        @Html.DropDownList("Roles", null, new { @class = "login-input-area" })
+                                                        <i class="fa fa-user login-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+
+                                        <div class="row">
+                                            <div class="col-lg-4"></div>
+                                            <div class="col-lg-8">
+                                                <div class="login-button-pro">
+
+                                                    <input type="submit" class="login-button login-button-lg" value="Register" />
+                                                    <br />
+                                                    <br />
+                                                    <a href="Login" class="login-button login-button-rg">Log In</a>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            }
+
+                            @section Scripts {
+                                @Scripts.Render("~/bundles/jqueryval")
+                            }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Start-->
+    <div class="footer-copyright-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copy-right">
+                        <p>&copy; @DateTime.Now.Year - IA project Application</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End-->
+
+    @Scripts.Render("~/bundels/vendor/jquery-1.11.3.min.js")
+    @Scripts.Render("~/bundels/bootstrap.min.js")
+    @Scripts.Render("~/bundels/jquery.meanmenu.js")
+    @Scripts.Render("~/bundels/jquery.mCustomScrollbar.concat.min.js")
+    @Scripts.Render("~/bundels/jquerysticky")
+    @Scripts.Render("~/bundels/jquery.scrollUp.min.js")
+    @Scripts.Render("~/bundels/jquery.form.min.js")
+    @Scripts.Render("~/bundels/jqueryvalidate")
+    @Scripts.Render("~/bundels/form-active.js")
+    @Scripts.Render("~/bundels/main.js")
+
+
+</body>
+</html>
